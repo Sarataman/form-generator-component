@@ -30,12 +30,14 @@ export function TextField(props) {
         placeholder={placeholder || ""}
         {...rest}
       />
+
       <ErrorMessage
         name={name}
         render={(msg) => (
           <div style={{ color: "red", fontSize: "12px" }}>{msg}</div>
         )}
       />
+      <br />
     </>
   );
 }
@@ -59,6 +61,7 @@ export function LongTextField(props) {
           <div style={{ color: "red", fontSize: "12px" }}>{msg}</div>
         )}
       />
+      <br />
     </>
   );
 }
@@ -82,6 +85,7 @@ export function NumberField(props) {
           <div style={{ color: "red", fontSize: "12px" }}>{msg}</div>
         )}
       />
+      <br />
     </>
   );
 }
@@ -105,6 +109,7 @@ export function DateField(props) {
           <div style={{ color: "red", fontSize: "12px" }}>{msg}</div>
         )}
       />
+      <br />
     </>
   );
 }
@@ -135,7 +140,6 @@ export function SelectField(props) {
   const { name, label, options } = props;
   return (
     <>
-      <br />
       {label && <label for={name}>{label}</label>}
       <Field as="select" id={name} name={name}>
         <option value="">Choose...</option>
@@ -149,6 +153,7 @@ export function SelectField(props) {
           <div style={{ color: "red", fontSize: "12px" }}>{msg}</div>
         )}
       />
+      <br />
     </>
   );
 }
@@ -158,12 +163,7 @@ export function SubmitButton(props) {
   const { isSubmitting } = useFormikContext();
 
   return (
-    <button
-      className="btn"
-      type="submit"
-      {...rest}
-      disabled={isSubmitting}
-    >
+    <button className="btn" type="submit" {...rest} disabled={isSubmitting}>
       {isSubmitting ? "Please wait..." : "Submit"}
     </button>
   );
