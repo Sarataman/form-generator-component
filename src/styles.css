@@ -1,4 +1,17 @@
-.App {
-  font-family: sans-serif;
-  text-align: center;
+.container {
+  font-family: "Montserrat", sans-serif;
+}
+
+.form-page {
+  color: #707070;
+}
+
+.btn {
+  background: #fecc0a;
+  font-weight: bold;
+  color: #0e163d;
+}
+
+h2 {
+  font-weight: bold;
 }

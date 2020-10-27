@@ -4,7 +4,7 @@ import {
   TextField,
   SelectField,
   NumberField,
-  RadioField,
+  // RadioField,
   DateField,
   LongTextField,
   SubmitButton
@@ -14,16 +14,17 @@ import * as Yup from "yup";
 const form = {
   1: {
     type: "text",
-    label: "What is the name of the officer in question?",
+    label: "What is the name of the officer in question?*",
     required: true
   },
   2: {
     type: "textarea",
-    label: "What happened?"
+    label: "What happened?*",
+    required: true
   },
   3: {
     type: "date",
-    label: "When was the date of the incident?",
+    label: "When was the date of the incident?*",
     required: true
   },
   4: {
@@ -32,16 +33,27 @@ const form = {
   },
   5: {
     type: "select",
-    label: "Role",
-    required: true,
+    label: "Have you been arrested before? If so, what for?(optional)",
     options: [
       {
-        label: "Admin",
-        value: "admin"
+        label: "Assault and Battery",
+        value: "Assault and Battery"
       },
       {
-        label: "User",
-        value: "user"
+        label: "Attempted murder",
+        value: "Attempted murder"
+      },
+      {
+        label: "Forgery",
+        value: "Forgery"
+      },
+      {
+        label: "Stealing",
+        value: "Stealing"
+      },
+      {
+        label: "Others",
+        value: "Others"
       }
     ]
   }
@@ -66,6 +78,7 @@ function FormGenerator() {
     for (var key of Object.keys(form)) {
       _formData[key] = "";
 
+      //Validation for input types using Yup
       if (form[key].type === "text" || "textarea") {
         _validationSchema[key] = Yup.string();
       } else if (form[key].type === "date") {
@@ -97,6 +110,7 @@ function FormGenerator() {
       options: elementSchema.options
     };
 
+    //Specify usage of Field functions created in FormELements component
     if (elementSchema.type === "text") {
       return <TextField {...props} />;
     }
@@ -119,11 +133,14 @@ function FormGenerator() {
 
   const onSubmit = (values, { setSubmitting, resetForm, setStatus }) => {
     console.log(values);
-    setSubmitting(false);
+    setSubmitting(true);
+    setTimeout(function () {
+      resetForm();
+    }, 1000);
   };
 
   return (
-    <div>
+    <div className="form-page">
       <Form
         className="form-group"
         enableReinitialize
@@ -135,6 +152,7 @@ function FormGenerator() {
           <div key={key}>{getFormElement(key, form[key])}</div>
         ))}
 
+        <br />
         <SubmitButton title="Submit" />
       </Form>
     </div>

@@ -109,27 +109,27 @@ export function DateField(props) {
   );
 }
 
-export function RadioField(props) {
-  const { gender, label, ...rest } = props;
-  return (
-    <>
-      {label && <label for={gender}>{label}</label>}
-      <Field
-        className="form-control"
-        type="radio"
-        name={gender}
-        id={gender}
-        {...rest}
-      />
-      <ErrorMessage
-        name={gender}
-        render={(msg) => (
-          <div style={{ color: "red", fontSize: "12px" }}>{msg}</div>
-        )}
-      />
-    </>
-  );
-}
+// export function RadioField(props) {
+//   const { gender, label, ...rest } = props;
+//   return (
+//     <>
+//       {label && <label for={gender}>{label}</label>}
+//       <Field
+//         className="form-control"
+//         type="radio"
+//         name={gender}
+//         id={gender}
+//         {...rest}
+//       />
+//       <ErrorMessage
+//         name={gender}
+//         render={(msg) => (
+//           <div style={{ color: "red", fontSize: "12px" }}>{msg}</div>
+//         )}
+//       />
+//     </>
+//   );
+// }
 
 export function SelectField(props) {
   const { name, label, options } = props;
@@ -159,7 +159,7 @@ export function SubmitButton(props) {
 
   return (
     <button
-      className="btn btn-primary"
+      className="btn"
       type="submit"
       {...rest}
       disabled={isSubmitting}
