@@ -118,32 +118,53 @@ export function DateField(props) {
   );
 }
 
-// //Radio button Input
 // export function RadioField(props) {
-//   const { name, id, value, onChange, label, ...rest } = props;
+//   const { name, id, label, ...rest } = props;
+//   const RadioButton = ({
+//     field: { name, value, onChange, onBlur },
+//     id,
+//     label,
+//     className,
+//     onSelect,
+//     ...props
+//   }) => {
+//     return (
+//       <div>
+//         <input
+//           name={name}
+//           id={id}
+//           type="radio"
+//           value={id} 
+//           checked={id === value}
+//           onChange={onChange}
+//           onClick={onSelect}
+//           onBlur={onBlur}
+//           {...props}
+//         />
+//         <label htmlFor={id}>{label}</label>
+//       </div>
+//     );
+//   };
+  
 //   return (
 //     <>
-//       {label && <label for={id}>{label}</label>}
+//     {label && <label for={name}>{name}</label>}
 //       <Field
-//         className="form-control"
-//         type="radio"
-//         name={name}
-//         id="gender"
-//         value={value || ""}
-//         checked={id === value}
-//         // onChange={e => change(e, name, true)}
-//         {...rest}
+//         component={RadioButton}
+//         name="radioGroup"
+//         id="radioOption1"
+//         label="Male"
 //       />
-//       <ErrorMessage
-//         name={name}
-//         render={(msg) => (
-//           <div style={{ color: "red", fontSize: "12px" }}>{msg}</div>
-//         )}
+//       <Field
+//         component={RadioButton}
+//         name="radioGroup"
+//         id="radioOption2"
+//         label="Female"
 //       />
+//       <br/>
 //     </>
-//   );
+//   )
 // }
-
 
 //Dropdown Input
 export function SelectField(props) {

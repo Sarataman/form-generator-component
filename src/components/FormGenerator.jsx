@@ -31,12 +31,6 @@ const form = {
     type: "number",
     label: "How much is the bribe that was paid? (optional)"
   },
-  gender: {
-    type: "radio",
-    name: "gender",
-    id: "genderOptions",
-    label: "Male"
-  },
   pastCrime: {
     type: "select",
     label: "Have you been arrested before? If so, what for?(optional)",
