@@ -24,7 +24,7 @@ const form = {
   },
   recollection: {
     type: "textarea",
-    label: "Briefly explain what happened?*",
+    label: "Briefly explain what happened*",
     required: true
   },
   bribePrice: {
