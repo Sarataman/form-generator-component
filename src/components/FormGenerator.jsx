@@ -8,7 +8,7 @@ import {
   DateField,
   TextAreaField,
   SubmitButton
-} from "./FormElements";
+} from "./FormInputFields";
 import * as Yup from "yup";
 
 const form = {
@@ -32,7 +32,7 @@ const form = {
     label: "How much is the bribe that was paid? (optional)"
   },
   gender: {
-    type:"radio",
+    type: "radio",
     name: "gender",
     id: "genderOptions",
     label: "Male"
@@ -82,7 +82,7 @@ const form = {
         value: "Others"
       }
     ]
-  },
+  }
 };
 
 function FormGenerator() {
