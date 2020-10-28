@@ -42,7 +42,7 @@ export function TextField(props) {
   );
 }
 
-export function LongTextField(props) {
+export function TextAreaField(props) {
   const { name, label, placeholder, ...rest } = props;
   return (
     <>
@@ -142,6 +142,7 @@ export function SelectField(props) {
     <>
       {label && <label for={name}>{label}</label>}
       <Field as="select" id={name} name={name}>
+        <br />
         <option value="">Choose...</option>
         {options.map((optn, index) => (
           <option value={optn.value} label={optn.label || optn.value} />

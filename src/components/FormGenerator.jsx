@@ -6,33 +6,34 @@ import {
   NumberField,
   // RadioField,
   DateField,
-  LongTextField,
+  TextAreaField,
   SubmitButton
 } from "./FormElements";
 import * as Yup from "yup";
 
 const form = {
-  1: {
+  officerName: {
     type: "text",
     label: "What is the name of the officer in question?*",
     required: true
   },
-  2: {
+  recollection: {
     type: "textarea",
     label: "What happened?*",
     required: true
   },
-  3: {
+  date: {
     type: "date",
     label: "When was the date of the incident?*",
     required: true
   },
-  4: {
+  bribePrice: {
     type: "number",
     label: "How much is the bribe that was paid? (optional)"
   },
-  5: {
+  pastCrime: {
     type: "select",
+    name: "pastCrime",
     label: "Have you been arrested before? If so, what for?(optional)",
     options: [
       {
@@ -59,6 +60,7 @@ const form = {
   }
   // 6: {
   //     type: "radio",
+  // name: "gender",
   //     label: "Male",
   // },
 };
@@ -118,7 +120,7 @@ function FormGenerator() {
       return <NumberField {...props} />;
     }
     if (elementSchema.type === "textarea") {
-      return <LongTextField {...props} />;
+      return <TextAreaField {...props} />;
     }
     if (elementSchema.type === "date") {
       return <DateField {...props} />;
