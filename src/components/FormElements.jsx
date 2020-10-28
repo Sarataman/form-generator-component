@@ -17,6 +17,7 @@ export function Form(props) {
   );
 }
 
+//Text Input
 export function TextField(props) {
   const { name, label, placeholder, ...rest } = props;
   return (
@@ -42,6 +43,7 @@ export function TextField(props) {
   );
 }
 
+//Textarea Input
 export function TextAreaField(props) {
   const { name, label, placeholder, ...rest } = props;
   return (
@@ -66,6 +68,7 @@ export function TextAreaField(props) {
   );
 }
 
+//Number Input
 export function NumberField(props) {
   const { name, label, placeholder, ...rest } = props;
   return (
@@ -90,6 +93,7 @@ export function NumberField(props) {
   );
 }
 
+//Date Input
 export function DateField(props) {
   const { name, label, placeholder, ...rest } = props;
   return (
@@ -114,20 +118,24 @@ export function DateField(props) {
   );
 }
 
+// //Radio button Input
 // export function RadioField(props) {
-//   const { gender, label, ...rest } = props;
+//   const { name, id, value, onChange, label, ...rest } = props;
 //   return (
 //     <>
-//       {label && <label for={gender}>{label}</label>}
+//       {label && <label for={id}>{label}</label>}
 //       <Field
 //         className="form-control"
 //         type="radio"
-//         name={gender}
-//         id={gender}
+//         name={name}
+//         id="gender"
+//         value={value || ""}
+//         checked={id === value}
+//         // onChange={e => change(e, name, true)}
 //         {...rest}
 //       />
 //       <ErrorMessage
-//         name={gender}
+//         name={name}
 //         render={(msg) => (
 //           <div style={{ color: "red", fontSize: "12px" }}>{msg}</div>
 //         )}
@@ -136,6 +144,8 @@ export function DateField(props) {
 //   );
 // }
 
+
+//Dropdown Input
 export function SelectField(props) {
   const { name, label, options } = props;
   return (

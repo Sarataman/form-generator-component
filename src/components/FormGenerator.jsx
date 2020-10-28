@@ -17,23 +17,28 @@ const form = {
     label: "What is the name of the officer in question?*",
     required: true
   },
-  recollection: {
-    type: "textarea",
-    label: "What happened?*",
-    required: true
-  },
   date: {
     type: "date",
     label: "When was the date of the incident?*",
+    required: true
+  },
+  recollection: {
+    type: "textarea",
+    label: "Briefly explain what happened?*",
     required: true
   },
   bribePrice: {
     type: "number",
     label: "How much is the bribe that was paid? (optional)"
   },
+  gender: {
+    type:"radio",
+    name: "gender",
+    id: "genderOptions",
+    label: "Male"
+  },
   pastCrime: {
     type: "select",
-    name: "pastCrime",
     label: "Have you been arrested before? If so, what for?(optional)",
     options: [
       {
@@ -45,8 +50,28 @@ const form = {
         value: "Attempted murder"
       },
       {
-        label: "Forgery",
-        value: "Forgery"
+        label: "Bribery and Corruption",
+        value: "Bribery and Corruption"
+      },
+      {
+        label: "Cyber-crimes",
+        value: "Cyber-crimes"
+      },
+      {
+        label: "Human Trafficking",
+        value: "Human Trafficking"
+      },
+      {
+        label: "Murder",
+        value: "Murder"
+      },
+      {
+        label: "Rape",
+        value: "Rape"
+      },
+      {
+        label: "Robbery",
+        value: "Robbery"
       },
       {
         label: "Stealing",
@@ -57,12 +82,7 @@ const form = {
         value: "Others"
       }
     ]
-  }
-  // 6: {
-  //     type: "radio",
-  // name: "gender",
-  //     label: "Male",
-  // },
+  },
 };
 
 function FormGenerator() {
@@ -107,7 +127,6 @@ function FormGenerator() {
   const getFormElement = (elementName, elementSchema) => {
     const props = {
       name: elementName,
-      // gender:elementName,
       label: elementSchema.label,
       options: elementSchema.options
     };
@@ -129,7 +148,7 @@ function FormGenerator() {
       return <SelectField {...props} />;
     }
     // if (elementSchema.type === "radio") {
-    //     return <RadioField  {...props} />
+    //   return <RadioField {...props} />;
     // }
   };
 
